@@ -1,0 +1,167 @@
+package gradedassignment.week3;
+
+import java.util.Scanner;//Scanner scans input during runtime to invoke other functions;
+
+class SuperDepartment{//Base class SuperDepartment;
+	
+	void departmentName() {//void function of Base class SuperDepartment;
+				System.out.println("Super Department");
+	}
+	
+	void getTodaysWork() {//void function of Base class SuperDepartment;
+				System.out.println("No Work as of now");
+	}
+	
+	void getWorkDeadline() {//void function of Base class SuperDepartment;
+				System.out.println("Nil");
+		
+	}
+	
+	void isTodayAHoliday() {//void function of Base class SuperDepartment;
+				System.out.println("Today is not a holiday");
+	}
+
+//paranthesis not closed as child classes are also present;
+
+class AdminDepartment extends SuperDepartment{//child class AdminDepartment inherits class SuperDepartment;
+		
+		
+		void departmentName() {//void function of child class AdminDepartment;
+			System.out.println("Admin Department");
+	}
+
+		void getTodaysWork() {//void function of child class AdminDepartment;
+			System.out.println("Complete your documents Submission");
+	}
+
+		void getWorkDeadline() {//void function of child class AdminDepartment;
+			System.out.println("Complete by EOD ");
+		}
+}
+class HrDepartment extends SuperDepartment{//Child class HrDepartment of parent class SuperDepartment;
+      
+	void departmentName() {//void function of child class HrDepartment;method overriding of function in class AdminDepartment 
+occurs during runtime to invoke this department function
+		System.out.println("Hr Department");
+}
+
+	void getTodaysWork() {//void function of child class HrDepartment;method overriding of function in class AdminDepartment 
+occurs during runtime to invoke this department function
+		System.out.println("Fill today’s worksheet and mark your attendance");
+}
+
+	void getWorkDeadline() {//void function of child class HrDepartment;method overriding of function in class AdminDepartment 
+occurs during runtime to invoke this department function
+		System.out.println("Complete by EOD ");
+	}
+	void doActivity{//void function of child class HrDepartment;method overriding of function in class AdminDepartment 
+occurs during runtime to invoke this department function;
+		System.out.println("team Lunch");
+	}
+	}
+class Techdepartment extends SuperDepartment{//child class TechDepartment inherits parent class SuperDepartment;
+	
+	void departmentName() {//void function of child class TechDepartment;method overriding of function in class AdminDepartment 
+and class HrDepartment occurs during runtime to invoke this department function;
+		System.out.println("Tech Department");
+	}
+	void getTodaysWork() {//void function of child class TechDepartment;method overriding of function in class AdminDepartment 
+and class HrDepartment occurs during runtime to invoke this department function;
+		System.out.println("Complete coding of module 1");
+}
+
+	void getWorkDeadline() {//void function of child class TechDepartment;method overriding of function in class AdminDepartment 
+and class HrDepartment occurs during runtime to invoke this department function;
+		System.out.println("Complete by EOD ");
+}
+	void getTechStackInformation() {//void function of class TechDepartment; no method overriding here;
+		System.out.println(“core Java”);
+	}
+	}
+		
+public class Main{//driver class;
+	
+
+	 public static void main(String[]args) {//assign values to Strings from various child classes and parent class;
+	    	
+		 		String departmentName;
+		 		String getTodaysWork;
+		 		String getWorkDeadline;
+		 		String isTodayAHoliday;
+		 		String doActivity;
+		 		String getTechStackInformation;
+		 		
+//Scanner utilises runtime function and invoking of functions in base and child classes;
+		 		Scanner sc= new Scanner(System.in);
+		 		System.out.println("Enter departmentName: "+  )//will ask which
+ department information you need, during runtime
+		 		String str= scan.nextLine();//scans the input of previous line, and returns accordingly
+		 		
+//superDepartment is a new object of class SuperDepartment;allocating memory to new object
+		 SuperDepartment superDepartment= new SuperDepartment();
+//object superDepartment invoking functions in class SuperDepartment
+		 		
+			superDepartment.departmentName();//invokes 
+void function departmentName() in class SuperDepartment
+		 		
+			superDepartment.getTodaysWork();//invokes 
+void function getTodaysWork() in class SuperDepartment
+		 	
+			superDepartment.getWorkDeadline();//invokes 
+void function getWorkDeadline() in class SuperDepartment
+		 		
+			superDepartment.isTodayAHoliday();//invokes 
+void function isTodayAHoliday() in class SuperDepartment
+		
+//admindepartment is a new object of class AdminDepartment;allocating memory to new object 		
+		 Superdepartment admindepartment = new AdminDepartment();
+//object admindepartment invoking functions from class AdminDepartment
+		     	
+			admindepartment.departmentName();//invokes 
+void function departmentName() in class AdminDepartment, overriding same method in class SuperDepartment
+		     	
+			admindepartment.getTodaysWork();//invokes 
+void function getTodaysWork() in class AdminDepartment, overriding same method in class SuperDepartment
+		     	
+			admindepartment.getWorkDeadline();//invokes 
+void function getWorkDeadline() in class AdminDepartment, overriding same method in class SuperDepartment
+		     	
+	//hrDepartment is a new object of class hrDepartment;allocating memory to new object	
+		Superdepartment hrDepartment = new HrDepartment;
+
+//object hrDepartment invoking functions from class hrDepartment
+		     	hrDepartment.departmentName();//invokes 
+void function departmentName() in class hrDepartment, overriding same method in class SuperDepartment and child class AdminDepartment 
+		     	
+			hrDepartment.getTodaysWork();//invokes 
+void function getTodaysWork() in class hrDepartment, overriding same method in class SuperDepartment and child class AdminDepartment
+		     	
+			hrDepartment.getWorkDeadline();//invokes 
+void function getWorkDeadline() in class hrDepartment, overriding same method in class SuperDepartment and child class AdminDepartment
+		
+		     	hrDepartment.doActivity();//invokes 
+void function doActivity() in class hrDepartment; no method overriding here
+		
+//techdepartment is a new object of class TechDepartment;allocating memory to new object     	
+		Superdepartment techdepartment= new TechDepartment;
+
+//object techdepartment invoking functions from class TechDepartment
+				techdepartment.departmentName();//invokes 
+void function departmentname() in class TechDepartment, overriding same method in class SuperDepartment and child class AdminDepartment
+				
+				techdepartment.getTodaysWork();//invokes 
+void function getTodaysWork() in class TechDepartment, overriding same method in class SuperDepartment and child class AdminDepartment 
+				
+				techdepartment.getWorkDeadline();//invokes 
+void function getWorkDeadline() in class TechDepartment, overriding same method in class SuperDepartment and child class AdminDepartment
+				
+				techdepartment.getTechStackInformation();//invokes 
+void function getTechStackInformation() in class TechDepartment,no method overriding here
+
+	
+		
+	}
+	
+ 	
+}
+}
